@@ -2,7 +2,7 @@
   <div class="container">
     <header></header>
     <main>
-      <h1 class="title">Login to Fat202</h1>
+      <h1 id="title">Login to F02</h1>
       <button id="google">
         <img class="icon" src="../assets/white-google-logo.png" alt="" />
         Continue with google
@@ -20,7 +20,12 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+onMounted(async () => {
+  const credentials = await googleSignIn();
+  console.log(credentials);
+});
+</script>
 
 <style scoped lang="scss">
 .container {
@@ -30,9 +35,15 @@
   flex-direction: column;
   height: 100%;
 
-  .title {
+  #title {
     font-size: 32px;
     margin-bottom: 16px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   button {

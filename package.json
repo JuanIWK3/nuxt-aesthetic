@@ -8,13 +8,15 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/firebase": "^8.2.2",
     "@nuxtjs/google-fonts": "^3.0.0-0",
     "nuxt": "3.0.0-rc.11",
     "sass": "^1.55.0",
     "sass-loader": "10"
   },
   "dependencies": {
-    "@nuxtjs/firebase": "^8.2.2",
+    "bulma": "^0.9.4",
     "firebase": "^9.10.0"
   }
 }
