@@ -3,7 +3,7 @@
     <header></header>
     <main>
       <h1 id="title">Login to F02</h1>
-      <button id="google">
+      <button id="google" @click="gsign()">
         <img class="icon" src="../assets/white-google-logo.png" alt="" />
         Continue with google
       </button>
@@ -15,16 +15,18 @@
       <button id="email">Continue with email</button>
     </main>
     <footer>
+      <pre>{{ credentials }}</pre>
       <NuxtLink to="/register">Don't have an account? Sign Up</NuxtLink>
     </footer>
   </div>
 </template>
 
 <script setup>
-onMounted(async () => {
-  const credentials = await googleSignIn();
+const credentials = ref();
+const gsign = async () => {
+  credentials.value = await googleSignIn();
   console.log(credentials);
-});
+};
 </script>
 
 <style scoped lang="scss">
